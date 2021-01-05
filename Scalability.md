@@ -28,6 +28,7 @@ Vertical scaling means scaling the system by adding more power (CPU, RAM, etc.) 
     - No load balancing
     - Doesn't scale well: Scaling invovles downtime and there is a limited capacity of a single machine
 
+![](https://github.com/idanhuang/system-design/blob/master/img/scaling.jpg)
 
 ## References: 
 1. https://www.section.io/blog/scaling-horizontally-vs-vertically/#:~:text=Horizontal%20scaling%20means%20scaling%20by,as%20%E2%80%9Cscaling%20up%E2%80%9D).
