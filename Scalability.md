@@ -11,66 +11,22 @@ Horizontal scaling means scaling the system by adding more machines to the pool 
     - Scale well: Add up more servers and reduce depending on usage patterns.
     - High availability: Perfect for highly availability of Web application/Batch processing operations.
   - Cons
-    - Increased cost: Additional machines requre increased infrastruture and maintenance cost.
-    - Additonal license: Need to purchase additional licenses for operating system and so on.
     - High network load: With remote produce calls, considerable amount of network load.
     - Data inconsistency: Data spread across several nodes, not consistent instantly.
+    - Increased cost: Additional machines requre increased infrastruture and maintenance cost.
+    - Additional license: Need to purchase additional licenses for operating system and so on.
 
 
 ## Vertical Scaling
 Vertical scaling means scaling the system by adding more power (CPU, RAM, etc.) to of the existing  machine. Vertical scaling is also called "scaling up".
   - Pros
+    - Less cost
+    - Data consistency: Data is consistent and maintained within a single node
+    - Less network load: Use Inter-process communication, less or almost no network overhead
   - Cons
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Horizontal Scaling or Vertical Scaling?
-When choosing between horizontal scaling and vertical scaling, there are various factors need to be considered:
-
-- Performance
-
-- Flexibility
-
-- Regularity of upgrades
-
-- Redudancy
-
-- geographical distribution
-
-- Cost
-
-
-
-
-## Horizontal Scaling vs. Vertical Scaling
-
-One fundamental differences between the two is that horizontal scaling requires breaking a sequential piece of logic into smaller pieces so that they can be executed in parallel across multiple machines. In many aspects, vertical scaling is easier because the logical doesn't need to change. We just run the same programs on higher-spec machines. However, there are many other factors should be considered when determining the appropriate scaling approach.
-
-
-![scaling](https://github.com/idanhuang/Learning_Note/blob/main/img/scaling.jpg)
-
-|               |  Horizontal Scaling           |  Vertical Scaling    |
-| ------------- |:------------------------------| :--------------------|
-| Database      | Each node only contains part of the data | Data resides on a single node and scaling is done through multi-core. i.e., spreading the load between the CPU and RAM resources of that machine |
-| Downtime      | less or no downtime      |   Vertical scaling is limited to the capacity of one machine, scaling involves downtime |
-| Concurrency | It involves distributing jobs across machines over the network. Several patterns associated with this model: Master/Worker*, Tuple Spaces, Blackboard, MapReduce.     |    Actor model: concurrent programming on multi-core machines is often performed via multi-threading and in-process message passing.|
-| Message passing |In distributed computing, the lack of a shared address space makes data sharing more complex. It also makes the process of sharing, passing or updating data more costly since you have to pass copies of the data.|In a multi-threaded scenario, you can assume the existence of a shared address space, so data sharing and message passing can be done by passing a reference. |
-
-
-
+    - Single point of failure: Server crash brings down entire system.
+    - No load balancing
+    - Doesn't scale well: Scaling invovles downtime and there is a limited capacity of a single machine
 
 
 ## References: 
